@@ -33,12 +33,21 @@ copy_admin_key: false
 #  defaults.rgw.buckets.data:
 #    pg_num: 16
 #    size: ""
+#    type: 'replicated'
+#    crush_rule_name: 'replicated_rule'
+#    expected_num_objects: 0
 #  defaults.rgw.buckets.index:
 #    pg_num: 32
 #    size: ""
+#    type: 'replicated'
+#    crush_rule_name: 'replicated_rule'
+#    expected_num_objects: 0
 #  foo:
 #    pg_num: 4
 #    size: ""
+#    type: 'replicated'
+#    crush_rule_name: 'replicated_rule'
+#    expected_num_objects: 0
 
 
 ##########
