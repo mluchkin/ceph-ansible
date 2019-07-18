@@ -247,6 +247,14 @@
   set_fact:
     osd_pool_default_min_size: "{{ ceph_conf_overrides.get('global', {}).get('osd_pool_default_min_size', ceph_osd_pool_default_min_size) }}"
 
+- name: set_fact ceph_osd_pool_default_type
+  set_fact:
+    osd_pool_default_type: "{{ ceph_conf_overrides.get('global', {}).get('osd_pool_default_type', ceph_osd_pool_default_type) }}"
+
+- name: set_fact ceph_osd_pool_default_expected_num_objects
+  set_fact:
+    osd_pool_default_expected_num_objects: "{{ ceph_conf_overrides.get('global', {}).get('osd_pool_default_expected_num_objects', ceph_osd_pool_default_expected_num_objects) }}"
+
 - name: check if the ceph conf exists
   stat:
     path: '/etc/ceph/{{ cluster }}.conf'
