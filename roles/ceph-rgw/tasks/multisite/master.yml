@@ -30,3 +30,18 @@
   run_once: true
   when: rgw_multisite_endpoints_list is defined
   notify: update period
+
+- name: add placement to zonegroup
+  command: "{{ container_exec_cmd }} radosgw-admin zonegroup placement add --rgw-zonegroup={{ item.zonegroup }} --placement-id={{ item.placement }}"
+  delegate_to: "{{ groups[mon_group_name][0] }}"
+  with_items: '{{ rgw_manage_placement }}'
+  when: rgw_manage_placement is defined
+
+- name: add placement to zone
+  command: >
+    {{ container_exec_cmd }} radosgw-admin zone placement add --rgw-zone={{ item.zone }} --placement-id={{ item.placement }}
+    --data-pool={{ item.data_pool }}
+    --index-pool={{ item.index_pool }}
+  delegate_to: "{{ groups[mon_group_name][0] }}"
+  with_items: '{{ rgw_manage_placement }}'
+  when: rgw_manage_placement is defined

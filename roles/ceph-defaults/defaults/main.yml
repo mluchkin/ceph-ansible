@@ -508,6 +508,18 @@ rgw_multisite_endpoint_addr: "{{ ansible_fqdn }}"
 #system_access_key: 6kWkikvapSnHyE22P7nO # should be re-created by the user
 #system_secret_key: MGecsMrWtKZgngOHZdrd6d3JxGO5CPWgT2lcnpSt # should be re-created by the user
 
+# rgw_manage_placement:
+#   - zonegroup: solarsystem
+#     zone: default
+#     placement: 'hdd_placement'
+#     data_pool: 'defaults.rgw.buckets.data'
+#     index_pool: 'defaults.rgw.buckets.index'
+#   - zonegroup: solarsystem
+#     zone: default
+#     placement: 'ssd_placement'
+#     data_pool: 'foo'
+#     index_pool: 'defaults.rgw.buckets.index'
+
 # Multi-site remote pull URL variables
 rgw_pull_port: "{{ radosgw_civetweb_port }}"
 rgw_pull_proto: "http" # should be the same as rgw_multisite_proto for the master zone cluster
