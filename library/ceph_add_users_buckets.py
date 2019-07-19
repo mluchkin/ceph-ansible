@@ -491,7 +491,7 @@ def main():
                   admin_secret_key=dict(type='str', required=True),
                   buckets=dict(type='list', required=False, elements='dict',
                                options=dict(bucket=dict(type='str', required=True),
-                                            user=dict(type='str', required=True)
+                                            user=dict(type='str', required=True),
                                             location=dict(type=str, required=False, default=''))),
                   users=dict(type='list', required=False, elements='dict',
                              options=dict(username=dict(type='str', required=True),
